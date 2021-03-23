@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class CalculadoraIMC extends AppCompatActivity implements View.OnClickListener {
 
     private TextView tvInformacion;
@@ -18,6 +20,9 @@ public class CalculadoraIMC extends AppCompatActivity implements View.OnClickLis
     private EditText txtAltura;
     private Button btnCalcular;
     private ImageView imgEstado;
+    private Double peso;
+    private Double altura;
+    private Double resultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +49,19 @@ public class CalculadoraIMC extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btnCalcular) {
-
+            peso = Double.parseDouble(txtPeso.getText().toString());
+            altura = Double.parseDouble(txtAltura.getText().toString());
+            String res = calcularIMC(peso, altura);
+            tvResultado.setText(res);
         }
+    }
+
+    private String calcularIMC(Double peso, Double altura) {
+        DecimalFormat formato = new DecimalFormat();
+        formato.setMaximumFractionDigits(1);
+        Double alturaCms;
+        alturaCms = altura / 100;
+        resultado = peso / Math.pow(alturaCms, 2);
+        return formato.format(resultado);
     }
 }
