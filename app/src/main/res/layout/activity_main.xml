@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFCACACA"
+    android:background="#FF202020"
     tools:context=".MainActivity">
 
     <EditText
@@ -16,6 +16,7 @@
         android:ems="10"
         android:hint="Nombre"
         android:inputType="textPersonName"
+        android:paddingLeft="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,6 +31,7 @@
         android:ems="10"
         android:hint="Apellidos"
         android:inputType="textPersonName"
+        android:paddingLeft="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +43,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
         android:text="Identifícate"
+        android:textColor="@color/white"
         android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,6 +60,7 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:paddingLeft="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +69,7 @@
     <Button
         android:id="@+id/btnEnviar"
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginTop="55dp"
         android:layout_marginBottom="150dp"
         android:backgroundTint="@color/teal_700"

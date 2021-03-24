@@ -62,6 +62,26 @@ public class CalculadoraIMC extends AppCompatActivity implements View.OnClickLis
         Double alturaCms;
         alturaCms = altura / 100;
         resultado = peso / Math.pow(alturaCms, 2);
+        cambiarImagen(resultado);
         return formato.format(resultado);
+
+    }
+
+    private void cambiarImagen(Double res){
+        if (res < 18.5){
+            imgEstado.setImageResource(R.drawable.bajo_peso);
+        }
+        else if (res >= 18.5 && res <= 24.9) {
+            imgEstado.setImageResource(R.drawable.peso_normal);
+        }
+        else if (res >= 25.0 && res <= 29.9) {
+            imgEstado.setImageResource(R.drawable.sobrepeso);
+        }
+        else if (res >= 30.0 && res <= 34.9) {
+            imgEstado.setImageResource(R.drawable.obesidad);
+        }
+        else {
+            imgEstado.setImageResource(R.drawable.obesidad_extrema);
+        }
     }
 }
