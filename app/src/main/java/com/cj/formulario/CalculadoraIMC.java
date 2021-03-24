@@ -59,12 +59,11 @@ public class CalculadoraIMC extends AppCompatActivity implements View.OnClickLis
     private String calcularIMC(Double peso, Double altura) {
         DecimalFormat formato = new DecimalFormat();
         formato.setMaximumFractionDigits(1);
-        Double alturaCms;
-        alturaCms = altura / 100;
-        resultado = peso / Math.pow(alturaCms, 2);
+        Double alturaMts;
+        alturaMts= altura / 100;
+        resultado = peso / Math.pow(alturaMts, 2);
         cambiarImagen(resultado);
         return formato.format(resultado);
-
     }
 
     private void cambiarImagen(Double res){
